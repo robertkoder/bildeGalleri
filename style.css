@@ -1,0 +1,103 @@
+@font-face {
+  font-family: nec_apc3;
+  src: url(/assets/Web437_NEC_APC3_8x16.woff) format("woff");
+  font-weight: 400;
+  font-style: normal
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 80%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode:both
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+img:hover {
+  transform: scale(1.3);
+  transition: all 0.3s;
+}
+
+h1 {
+  font-family: nec_apc3;
+  font-size: 6vw;
+  margin-top: -60px
+}
+
+.text-adjustment {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 10%;
+  }
+  .text-adjustment {
+    position: absolute;
+    top: -50px;
+    margin-top: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap; 
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin-top: 60px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .text-adjustment {
+    position: absolute;
+    margin-top: 80px;
+    top: -110px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: 7vw;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+      scale: 0.9;
+  }
+  100% {
+      opacity: 1;
+      scale: 1;
+   }
+}
